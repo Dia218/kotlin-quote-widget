@@ -1,10 +1,12 @@
-import constant.Command
-import controller.QuoteController
+package controller
+
+import enums.Command
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.mockito.Mock
-import org.mockito.Mockito.*
+import org.mockito.Mockito.verify
+import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import repository.MapQuoteRepository
 import service.QuoteService
