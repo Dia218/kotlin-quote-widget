@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import constant.Command;
 import exception.InvalidCommandException;
@@ -103,7 +105,9 @@ public class QuoteController {
     
     private void handleList() {
         try {
-            quoteView.displayQuotes(quoteService.listQuotes().reversed());
+            List<String> quotes = quoteService.listQuotes();
+            Collections.reverse(quotes); // 리스트 순서 뒤집기
+            quoteView.displayQuotes(quotes); // 뒤집힌 리스트 출력
         } catch (QuotesFileAccessException e) {
             quoteView.displayErrorMessage(e.getMessage());
         }
